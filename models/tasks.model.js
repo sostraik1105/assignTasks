@@ -22,13 +22,14 @@ const Tasks = db.define(
     },
     startDate: {
       type: DataTypes.DATE,
-      allowNull: false,
     },
     finishDate: {
       type: DataTypes.DATE,
+      allowNull: true,
     },
     status: {
       type: DataTypes.STRING,
+      defaultValue: "active",
       validate: {
         isIn: [["active", "completed", "late", "cancelled"]],
       },

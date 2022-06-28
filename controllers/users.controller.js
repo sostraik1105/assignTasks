@@ -21,7 +21,7 @@ const getUserActiveById = errorHandler(async (req, res, next) => {
 const createUser = errorHandler(async (req, res, next) => {
   const { name, email, password } = req.body;
   const newUser = await Users.create({ name, email, password });
-  res.status(200).json({ newUser });
+  res.status(201).json({ newUser });
 });
 
 const updateUser = errorHandler(async (req, res, next) => {

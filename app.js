@@ -21,8 +21,4 @@ app.all("*", (req, res, next) => {
 
 app.use(globalErrorHandler);
 
-app.listen(process.env.PORT || 4000, () => {
-  console.log(`App running at port ${process.env.PORT}`);
-});
-
 module.exports = { app };

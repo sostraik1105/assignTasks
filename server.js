@@ -1,11 +1,16 @@
 const { app } = require("./app");
+
+// utils
 const { db } = require("./utils/database");
+
+// models
 const { rels } = require("./models/relEntity");
 
 rels();
 
 db.sync();
 
-app.listen(process.env.PORT || 4000, () => {
-  console.log(`App running at port ${process.env.PORT}`);
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`App running at port ${PORT}`);
 });
