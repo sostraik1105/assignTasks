@@ -21,16 +21,6 @@ const taskValidation = [
     .isInt()
     .withMessage("Id user is a number"),
   body("title").notEmpty().withMessage("Id user cannot be empty"),
-  body("limitDate")
-    .notEmpty()
-    .withMessage("limit date cannot be empty")
-    .isDate()
-    .withMessage("Date format is invalid"),
-  body("startDate")
-    .notEmpty()
-    .withMessage("limit date cannot be empty")
-    .isDate()
-    .withMessage("Date format is invalid"),
 ];
 
 const checkResults = (req, res, next) => {
