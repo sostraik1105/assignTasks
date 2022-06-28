@@ -43,9 +43,9 @@ const sendTask = errorHandler(async (req, res, next) => {
   const date = Date.now() - dbTask.limitDate;
 
   if (date <= 0) {
-    await dbTask.update({ finishDate: Date, status: "completed" });
+    await dbTask.update({ finishDate: Date(), status: "completed" });
   } else {
-    await dbTask.update({ finishDate: Date, status: "late" });
+    await dbTask.update({ finishDate: Date(), status: "late" });
   }
 
   res.status(200).json({ dbTask });
